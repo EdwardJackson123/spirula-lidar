@@ -6,8 +6,13 @@ build-backend = "setuptools.build_meta"
 name = "spirula-lidar"
 version = "0.1.0"
 description = "Image-only Spirula reconstruction with checked metric LiDAR alignment"
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10", "Pillow>=10", "plyfile>=1.0", "laspy[lazrs]>=2.5"]
+
+[project.urls]
+Repository = "https://github.com/EdwardJackson123/spirula-lidar"
+Issues = "https://github.com/EdwardJackson123/spirula-lidar/issues"
 
 [project.optional-dependencies]
 worker = ["ultralytics>=8.3", "pycolmap>=3.11"]

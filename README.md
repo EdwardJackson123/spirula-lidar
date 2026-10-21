@@ -1,5 +1,7 @@
 # Spirula + LiDAR
 
+独立代码库：[EdwardJackson123/spirula-lidar](https://github.com/EdwardJackson123/spirula-lidar)。当前版本为 **0.1.0，实验阶段**。已通过合成配准、模拟引擎流程和真实模型导出回归；现有两项真实数据自动对齐试验尚未通过验收，不能据此承诺任意数据都能自动得到可靠米制模型。详见[验证记录](reports/VALIDATION.json)。
+
 把原始图像训练成 SH0 高斯模型，再对齐到激光地图的米制尺度。Python 负责流程、配准、验收和导出；训练调用独立的 Spirula 原生程序。
 
 业务必需输入只有图像目录与激光点云。Spirula 程序、人物分割权重属于运行环境。点云支持 LAS、LAZ、普通 XYZ PLY，单位通过 `lidar_unit_to_m` 声明；默认按米读取。当前直接接收图像，不包含视频抽帧和压缩包解包。
@@ -9,6 +11,8 @@
 训练建议在 Linux NVIDIA GPU 服务器运行，Python ≥3.10。
 
 ```bash
+git clone https://github.com/EdwardJackson123/spirula-lidar.git
+cd spirula-lidar
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e '.[worker,test]'
@@ -126,3 +130,5 @@ pytest -q
 ```
 
 测试包含已知 Sim3 与异常点、退化几何、任意地图原点、相机留出隔离、高斯协方差变换、非单位训练归一化、LAS 单位和缓存校验、拒绝导出、模拟训练引擎下的完整流程与续跑。模拟测试不等于实际 GPU 训练验收。实际服务器验证结果记录于 `reports/VALIDATION.json`，大模型与数据不进入 Git。
+
+GitHub Actions 会在 Windows / Ubuntu、Python 3.10 / 3.12 上运行 CPU 测试并构建 wheel，不要求 GPU 或 Spirula。系统接入和状态约定见[集成说明](docs/INTEGRATION.md)，发布内容见[版本记录](CHANGELOG.md)。Spirula、分割模型及其依赖使用各自的上游许可，本仓库不随附这些程序、权重或采集数据。

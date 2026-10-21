@@ -16,3 +16,15 @@ runs/
 doctor.json
 runtime_validation/
 .export-*/
+.env.*
+!.env.example
+*.ckpt
+*.pth
+*.onnx
+*.safetensors
+*.zip
+*.tar.gz
+*.bundle
+htmlcov/
+.coverage
+test-results/
