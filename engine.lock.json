@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/harry7557558/spirula-studio.git",
+  "source_commit_inspected": "e83bb8c7d90a467c47bbbd696a5e283214ebe544",
+  "tested_binary_version": "Spirula Studio 2026.10.6 (e83bb8c-dirty)",
+  "binary_distributed": false,
+  "note": "External runtime. The existing tested server binary contains local changes; do not assume a clean checkout is byte-identical. Every run fingerprints its actual executable. doctor checks required CLI flags."
+}

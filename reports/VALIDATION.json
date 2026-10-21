@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "windows_tests": {
+    "tests": 24,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "linux_tests": {
+    "tests": 24,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "server_runtime_ready": true,
+  "server_spirula_version": "Spirula Studio 2026.10.6 (e83bb8c-dirty)",
+  "full_gpu_training_executed": false,
+  "full_pipeline_simulated_engine_test_passed": true,
+  "synthetic_geometry_only_known_scale_test_passed": true,
+  "measured_lidar_format": "Original 51,339,786-point LAS, streamed to a bounded 8cm voxel cloud",
+  "real_reference_pose_case": {
+    "passed": false,
+    "heldout": {
+      "points": 3987,
+      "median_m": 0.05184016164142657,
+      "p90_m": 0.3533275097717686,
+      "within10cm": 0.744920993227991
+    },
+    "checks": {
+      "heldout_median_le_5cm": false,
+      "heldout_within10cm_ge_70percent": true,
+      "reference_heldout_views": true,
+      "reference_position_median_le_15cm": true,
+      "reference_orientation_median_le_3deg": true,
+      "reference_within_20cm_5deg_ge_80percent": false,
+      "fit_anchor_scale_spread_le_2percent": true
+    },
+    "note": "Reused PnP anchors; reference heldout checks correctly reject this candidate"
+  },
+  "real_geometry_only_case": {
+    "passed": false,
+    "candidate_scale": 0.7477819270454741,
+    "heldout": {
+      "points": 3987,
+      "median_m": 0.08893429602523416,
+      "p90_m": 0.23853973456643277,
+      "within10cm": 0.5402558314522197
+    },
+    "checks": {
+      "heldout_median_le_5cm": false,
+      "heldout_within10cm_ge_70percent": false,
+      "surface_group_coverage": false,
+      "sim3_observable": true,
+      "tested_alternative_gap": false
+    },
+    "note": "Finite geometry-only search; incorrect/weak candidate is not accepted or exported"
+  },
+  "real_prevalidated_transform_export": {
+    "passed": true,
+    "gaussians": 1854446,
+    "bytes": 126102745,
+    "sha256": "771b730f62b3430baa66386eb7f737133d56827cbaafbfa82524aee9094159c9",
+    "xyz_max_abs_difference_m": 1.9073486328125e-06,
+    "logscale_max_abs_difference": 0.0,
+    "max_one_minus_abs_quaternion_dot": 5.551115123125783e-16,
+    "color_opacity_unchanged": true,
+    "uses_old_accepted_transform": true,
+    "new_alignment_acceptance_claim": false
+  },
+  "implementation_limits": [
+    "No fresh full GPU training in this validation",
+    "Cross-capture MegaLoc / LightGlue / PnP anchor generation is not bundled; accept external reference c2w poses",
+    "Real geometry-only case remains needs_review; no claim of universal automatic registration",
+    "No absolute surveyed scale certification"
+  ],
+  "server_repository": "/home/xujie/nav-twin-work/spirula-lidar",
+  "server_evidence": "/home/xujie/nav-twin-work/spirula-lidar-validation-20261021"
+}

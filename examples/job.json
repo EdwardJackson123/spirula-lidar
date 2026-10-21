@@ -1,0 +1,15 @@
+{
+  "images": "/path/to/original/images",
+  "lidar": "/path/to/metric/scene.las",
+  "output": "/path/to/your/workspace/run001",
+  "spirula": "/path/to/spirula",
+  "person_model": "/path/to/yolo11x-seg.pt",
+  "lidar_unit_to_m": 1.0,
+  "gpu_index": 0,
+  "threads": 8,
+  "ordered_images": true,
+  "camera_model": "opencv",
+  "resources": {"gpu_gib": 18, "ram_gib": 64, "free_reserve_fraction": 0.2},
+  "training": {"max_gaussians": 15000000, "max_iterations": 120000},
+  "alignment": {"lidar_voxel_m": 0.08, "max_scale_hypotheses": 8, "yaw_step_degrees": 4, "coarse_per_mode": 24, "refine_per_mode": 4, "feature_fallback": true}
+}

@@ -1,0 +1,8 @@
+{
+  "frame": "lidar",
+  "unit_to_m": 1.0,
+  "poses": {
+    "000001.jpg": [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]
+  },
+  "note": "Schema example only. Supply at least 12 real matching image poses as OpenCV c2w in the LiDAR frame; never use these example numbers as calibration."
+}
